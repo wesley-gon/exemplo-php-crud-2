@@ -1,17 +1,15 @@
 <?php
-/* Verificando se o botão do formulário
-foi acionado */
+use CrudPoo\Fabricante;
+ require_once "../vendor/autoload.php";
+
 if( isset($_POST['inserir']) ){
-    // Importando as funções e a conexão
-    require_once "../src/funcoes-fabricantes.php";
-
-    // Capturando e limpando o que foi digitado no campo nome
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // Chamando a função e passando os dados de conexão e o nome digitado
-    inserirFabricante($conexao, $nome);
-
-    // Redirecionamento
+     
+    $fabricante = new Fabricante;
+    /*usando o setter paa definir o nome do novo fabricante*/
+    $fabricante->setNome( $_POST ['nome']);
+     
+    $fabricante->inserirFabricante();
+   
     header("location:listar.php");
 }
 ?>

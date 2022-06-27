@@ -25,7 +25,6 @@ public static function conecta():PDO {
         /*  self:: usamos para chamar recursos estaticos da propria classe */
 
         self::$conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "OK!";
     } catch (\Exception $erro) {
         die("deu ruim: ".$erro->getMessage());
     }
