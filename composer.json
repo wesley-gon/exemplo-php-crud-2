@@ -1,0 +1,8 @@
+{
+    "autoload" : {
+        "psr-a" : {
+            "CrudPoo\\" : "src/"
+
+        }
+    }
+}
